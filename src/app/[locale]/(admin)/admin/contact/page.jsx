@@ -1,3 +1,12 @@
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Metadata_Contact"),
+  };
+}
 export default function ContactAdminPage() {
   return (
     <div className="w-4/5 mx-auto text-center flex flex-col gap-y-10">
