@@ -1,5 +1,13 @@
 {
   "HomePage": {
     "title": "Hello world!"
-  }
+  },
+  "MenuClient": ["About", "Contact", "Project", "Admin"],
+  "MenuAdmin": ["Home", "Contact", "News", "Test"],
+  "Counter_Text": [
+    "   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore illo eum eveniet dicta, hic totam. In, sed! Totam voluptate nam qui perferendis fuga vitae quam velit quos incidunt. Porro.",
+    "   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore illo eum eveniet dicta, hic totam. In, sed! Totam voluptate nam qui perferendis fuga vitae quam velit quos incidunt. Porro.",
+    "   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore illo eum eveniet dicta, hic totam. In, sed! Totam voluptate nam qui perferendis fuga vitae quam velit quos incidunt. Porro.",
+    "   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore illo eum eveniet dicta, hic totam. In, sed! Totam voluptate nam qui perferendis fuga vitae quam velit quos incidunt. Porro."
+  ]
 }
