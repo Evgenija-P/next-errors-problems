@@ -1,3 +1,4 @@
+import EditorComponent from "@/components/Editor";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -11,7 +12,9 @@ export async function generateMetadata({ params: { locale } }) {
 export default function TestAdminPage() {
   return (
     <div className="">
-      <h1> This is TestAdminPage Page</h1>
+      <h1> This is Editor Page</h1>
+
+      <EditorComponent />
     </div>
   );
 }
