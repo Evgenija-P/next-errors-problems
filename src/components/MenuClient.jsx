@@ -1,6 +1,7 @@
 import { Link } from "@/navigation";
 import ButtonLang from "./ButtonLang";
 import { useTranslations } from "next-intl";
+import Search from "./Search";
 
 const MenuClient = ({ locale }) => {
   const t = useTranslations();
@@ -34,6 +35,7 @@ const MenuClient = ({ locale }) => {
           {el.name}
         </Link>
       ))}
+      <Search />
 
       <ButtonLang />
     </div>
