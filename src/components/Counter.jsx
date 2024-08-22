@@ -10,8 +10,8 @@ const Counter = ({ content }) => {
         <p>{count}</p>
         <button onClick={() => setCount(count + 1)}> + </button>
       </div>
-      {content.map(el => (
-        <p className="text-2xl text-blue-500 text-center w-3/5 mx-auto" key={el}>
+      {content.map((el, index) => (
+        <p className="text-2xl text-blue-500 text-center w-3/5 mx-auto" key={index}>
           {el}
         </p>
       ))}
