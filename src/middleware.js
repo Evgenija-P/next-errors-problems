@@ -16,7 +16,8 @@ const authMiddleware = withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => token != null,
+      authorized: () => console.log("start"),
+      // authorized: ({ token }) => token != null,
     },
     pages: {
       signIn: "/signin",
@@ -24,33 +25,19 @@ const authMiddleware = withAuth(
   }
 );
 
-// export default function middleware(req) {
-//   const publicPathnameRegex = RegExp(
-//     `^(/(${locales.join("|")}))?(${publicPages
-//       .flatMap(p => (p === "/" ? ["", "/"] : p))
-//       .join("|")})/?$`,
-//     "i"
-//   );
-//   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
-
-//   if (isPublicPage) {
-//     return intlMiddleware(req);
-//   } else {
-//     return authMiddleware(req);
-//   }
-// }
-
 export default function middleware(req) {
-  // Define a regex pattern for private URLs
-  const excludePattern = "^(/(" + locales.join("|") + "))?/admin/?.*?$";
-  const publicPathnameRegex = RegExp(excludePattern, "i");
-  const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
+  const publicPathnameRegex = RegExp(
+    `^(/(${locales.join("|")}))?(${publicPages
+      .flatMap(p => (p === "/" ? ["", "/"] : p))
+      .join("|")})/?$`,
+    "i"
+  );
+  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
+  console.log(isPublicPage);
 
   if (isPublicPage) {
-    // Apply Next-Intl middleware for public pages
     return intlMiddleware(req);
   } else {
-    // Apply Next-Auth middleware for private pages
     return authMiddleware(req);
   }
 }
