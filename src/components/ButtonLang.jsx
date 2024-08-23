@@ -2,13 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import { Link } from "@/navigation";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const ButtonLang = ({ locale }) => {
   const pathname = usePathname();
   const path = pathname.split("/").slice(2);
   const session = useSession();
-  console.log(session);
 
   return (
     <div className="flex gap-x-1">
@@ -26,6 +25,11 @@ const ButtonLang = ({ locale }) => {
       >
         en
       </Link>
+      {session?.data && (
+        <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+          Sign Out
+        </Link>
+      )}
     </div>
   );
 };

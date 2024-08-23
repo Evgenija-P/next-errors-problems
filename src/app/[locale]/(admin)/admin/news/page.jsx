@@ -1,7 +1,7 @@
+import NewsPage from "@/components/NewsPage";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
-  console.log(locale);
   const t = await getTranslations({ locale });
 
   return {
@@ -11,7 +11,7 @@ export async function generateMetadata({ params: { locale } }) {
 export default function NewsAdminPage() {
   return (
     <div className="">
-      <h1> This is NewsAdminPage Page</h1>
+      <NewsPage />
     </div>
   );
 }

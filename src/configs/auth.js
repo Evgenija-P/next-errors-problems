@@ -13,7 +13,7 @@ export const authConfig = {
           if (!credentials?.email || !credentials.password) return null;
 
           const currentUser = users.find(user => user.email === credentials.email);
-
+          console.log("currentUser_______", currentUser);
           if (currentUser && currentUser.password === credentials.password) {
             const { password, ...userWithoutPass } = currentUser;
             return userWithoutPass;
